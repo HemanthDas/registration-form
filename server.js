@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
+app.use(express.json());
 const port = 3000;
 const { signup } = require("./Controller/signupController");
+const { login } = require("./Controller/loginController");
 app.listen(port, () => console.log(`Server running on port ${port}`));
 app.get("/", (req, res) => res.send("Hello World!"));
 app.post("/auth/signup", signup);
+app.post("/auth/login");
